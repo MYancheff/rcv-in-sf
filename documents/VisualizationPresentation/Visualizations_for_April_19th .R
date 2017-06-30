@@ -4,7 +4,7 @@
 #Tidying & wrangling  from the raw data 
 library(tidyverse)
 library(forcats)
-BallotImage <- read_tsv("data/20161206_ballotimage.txt", col_names = F) %>%
+BallotImage <- read_tsv("data/SF/20161206_ballotimage.txt", col_names = F) %>%
   separate(X1, c("contest_id",
                  "pref_voter_id",
                  "serial_number",
@@ -26,7 +26,7 @@ BallotImage <- read_tsv("data/20161206_ballotimage.txt", col_names = F) %>%
          over_vote = as.integer(over_vote),
          under_vote = as.integer(under_vote))
 
-MasterLookup <- read_tsv("data/20161206_masterlookup.txt", col_names = F) %>%
+MasterLookup <- read_tsv("data/SF/20161206_masterlookup.txt", col_names = F) %>%
   separate(X1, c("record_type",
                  "id",
                  "description",
